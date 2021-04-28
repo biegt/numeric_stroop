@@ -1,6 +1,8 @@
 library(tidyverse)
 library(readxl)
 
+# Funktion, um Bilder zu generieren ---------------------------------------------------
+
 generate_image <- function(item, path) {
   
   id <- item$id
@@ -37,13 +39,6 @@ items <- read_excel("Zahlenpaare.xlsx") %>%
 walk(items, ~ generate_image(.x, "images"))
 
 
-# Testbilder --------------------------------------------------------------
-
-test_items <- read_excel("Zahlenpaare.xlsx") %>%
-  mutate(id = row_number()) %>% 
-  split(.$id)
-
-walk(test_items, ~ generate_image(.x, "images"))
-
+# TODO: Funktion schreiben, die einen entsprechenden Dataframe erzeugt, so dass die Eingabe nicht aus einer externen Ressource gelesen werden muss.
 
          
