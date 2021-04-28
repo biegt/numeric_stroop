@@ -1,6 +1,7 @@
 library(tidyverse)
 library(readxl)
 
+
 # Funktion, um Bilder zu generieren ---------------------------------------------------
 
 generate_image <- function(item, path) {
