@@ -37,6 +37,8 @@ items <- read_excel("Zahlenpaare.xlsx") %>%
   mutate(id = row_number()) %>% 
   split(.$id)
 
+dir.create("images")
+
 walk(items, ~ generate_image(.x, "images"))
 
 
